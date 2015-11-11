@@ -7,14 +7,34 @@ and open the template in the editor.
     Created on : Oct 18, 2015, 9:12:07 PM
     Author     : James.Farley
 */
+
+wrapper { width: auto;
+            min-width: 0;
+            margin: 0;
+            box-shadow: none;
+            color: aqua; 
+             }
+
 body {
     font-family: Arial, Helvetica, sans-sarif;
     font-size: 11pt;
     margin-left: 2em;
     margin-right: 2em;
+    background-color: beige;
+       color: black;
+	   font-family: Arial, Verdana, sans-serif;
+	   padding-left: 5px;
+	   padding-right: 5px;
+	   width: 80%;
+	   min-width: 700px;
+	   max-width: 1024px;   
+	   box-shadow: 0px 0px 0px .5px;
 }
 h1 {
     color: blue;
+}
+nav {
+    background-color: beige;
 }
 label {
     float: left;
@@ -31,4 +51,12 @@ br {
 }
 #submit {
     margin-left: 0.5em
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: beige;
 }

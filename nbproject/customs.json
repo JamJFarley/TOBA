@@ -1,0 +1,14 @@
+{
+    "elements": {
+        "c:import": {},
+        "title": {}
+    },
+    "attributes": {
+        "charset": {
+            "context": "meta"
+        },
+        "name": {
+            "context": "meta"
+        }
+    }
+}
