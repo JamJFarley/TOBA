@@ -10,23 +10,27 @@
         <servlet-class>TOBA.Login.LoginServlet</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>PasswordResetServlet</servlet-name>
+        <servlet-class>TOBA.Login.PasswordResetServlet</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>NewCustomerServlet</servlet-name>
         <servlet-class>TOBA.NewCustomer.NewCustomerServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>Transaction</servlet-name>
-        <servlet-class>TOBA.Data.TransactionServlet</servlet-class>
+        <servlet-name>TransactionServlet</servlet-name>
+        <servlet-class>TOBA.Transaction.TransactionServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>authentication</servlet-name>
-        <servlet-class>TOBA.Data.User</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>PasswordResetServlet</servlet-name>
-        <servlet-class>TOBA.Login.PasswordResetServlet</servlet-class>
+        <servlet-name>User</servlet-name>
+        <servlet-class>TOBA.authentication.User</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/Login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PasswordResetServlet</servlet-name>
         <url-pattern>/Login</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
@@ -38,8 +42,8 @@
         <url-pattern>/Transaction</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>PasswordResetServlet</servlet-name>
-        <url-pattern>/PasswordResetServlet</url-pattern>
+        <servlet-name>User</servlet-name>
+        <url-pattern>/authentication</url-pattern>
     </servlet-mapping>
     <error-page>
         <error-code>404</error-code>

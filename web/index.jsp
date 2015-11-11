@@ -15,6 +15,7 @@
                 <li><a href="index.jsp">Home</a></li>
                 <li><a href="login.jsp">Login</a></li>
                 <li><a href="New_customer.jsp">New Customer?</a></li>
+                <li><a href="account_activity.jsp">Account Activity</a></li>
             </ul>
 	</nav>
 <c:import url="/includes/footer.jsp" />

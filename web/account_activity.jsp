@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="TOBA.authentication.User"%>
 <!DOCTYPE html>
 <!--
@@ -15,12 +16,21 @@ and open the template in the editor.
         <header role="banner">
             <h1>Titan Online Banking Application (TOBA)</h1>
         </header>
+        <nav>
+            <ul>
+                <li><a href="index.jsp">Home</a></li>
+                <li><a href="login.jsp">Login</a></li>
+                <li><a href="New_customer.jsp">New Customer?</a></li>
+                <li><a href="account_activity.jsp">Account Activity</a></li>
+            </ul>
+	</nav>
+        <c:choose>
+        <c:when test="${not empty user}">
+            <p>Hello<c:out value='${user.firstName + user.lastName}'></p>
+       
+        <c:otherwise>
+            <p>Please Log In</p>
+        </c:otherwise>
         
-        <c:if test="${user == null}">
-            <p>Welcome${user.firstName + user.lastName}</p>
-        </c:if>
-        <c:if test="${user == null}">
-            <p>Not Logged In</p>
-        </c:if>
     </body>
 </html>
