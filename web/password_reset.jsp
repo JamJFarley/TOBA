@@ -13,7 +13,7 @@
     </head>
     <body>
         <h1>Password Reset</h1>
-        <form action="PasswordResetServlet" method="post">
+        <form action="password_reset" method="post">
             <input name="password" value="${user.password}"/>
             <div><input type="submit" value="submit" id="submit"></div> 
         </form>

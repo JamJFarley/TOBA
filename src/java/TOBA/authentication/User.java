@@ -59,10 +59,10 @@ public class User implements Serializable {
         this.firstName = firstName;
     }
     public String getlastName() {
-        return firstName;
+        return lastName;
     }
     public void setLastName(String lastName) {
-        this.firstName = lastName;
+        this.lastName = lastName;
     }
     public String getPhone() {
         return phone;
@@ -83,7 +83,7 @@ public class User implements Serializable {
         this.city = city;
     }
     public String getState() {
-        return firstName;
+        return state;
     }
     public void setState(String state) {
         this.state = state;

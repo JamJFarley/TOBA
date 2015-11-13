@@ -31,7 +31,7 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>PasswordResetServlet</servlet-name>
-        <url-pattern>/Login</url-pattern>
+        <url-pattern>/password_reset</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>NewCustomerServlet</servlet-name>

@@ -34,10 +34,10 @@ and open the template in the editor.
 			<fieldset>                                                 
 				<div><label for="firstName">First Name:</label><input type="text" name="firstName" id="firstName"></div>
 				<div><label for="lastName">Last Name:</label><input type="text" name="lastName" id="lastName"></div>
-                                <div><label for="phone">Phone:     </label><input type="text" name="phone" id="phone"></div>
-                                <div><label for="address">Address:   </label><input type="text" name="address" id="address"></div>
-                                <div><label for="city">City:    </label><input type="text" name="city" id="city"></div>
-                                <div><label for="state">State:     </label><input type="text" name="state" id="state"></div>
+                                <div><label for="phone">Phone:</label><input type="text" name="phone" id="phone"></div>
+                                <div><label for="address">Address:</label><input type="text" name="address" id="address"></div>
+                                <div><label for="city">City:</label><input type="text" name="city" id="city"></div>
+                                <div><label for="state">State:</label><input type="text" name="state" id="state"></div>
                                 <div><label for="zipCode">Zip Code: </label><input type="text" name="zipCode" id="zipCode"></div>
                                 <div><label for="email">Email:    </label><input type="text" name="email" id="email"></div>
 				<div><input type="submit" value="register" id="submit"></div>       

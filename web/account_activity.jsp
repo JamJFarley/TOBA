@@ -24,13 +24,13 @@ and open the template in the editor.
                 <li><a href="account_activity.jsp">Account Activity</a></li>
             </ul>
 	</nav>
-        <c:choose>
+      <c:choose>
         <c:when test="${not empty user}">
-            <p>Hello<c:out value='${user.firstName + user.lastName}'></p>
-       
+            <p>Hello <c:out value='${user.firstName}'/></p>
+        </c:when>
         <c:otherwise>
             <p>Please Log In</p>
         </c:otherwise>
-        
+    </c:choose>
     </body>
 </html>
