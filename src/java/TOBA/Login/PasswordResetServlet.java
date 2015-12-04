@@ -5,7 +5,7 @@
  */
 package TOBA.Login;
 
-import TOBA.authentication.User;
+import TOBA.infrastructure.User;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;

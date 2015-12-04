@@ -1,5 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@page import="TOBA.authentication.User"%>
+
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -13,9 +13,13 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
+        <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+  
         <header role="banner">
             <h1>Titan Online Banking Application (TOBA)</h1>
         </header>
+    
+        
         <nav>
             <ul>
                 <li><a href="index.jsp">Home</a></li>
@@ -31,6 +35,6 @@ and open the template in the editor.
         <c:otherwise>
             <p>Please Log In</p>
         </c:otherwise>
-    </c:choose>
+     </c:choose>
     </body>
 </html>

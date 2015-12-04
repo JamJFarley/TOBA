@@ -5,13 +5,16 @@
  */
 package TOBA.NewCustomer;
 
-import TOBA.authentication.User;
+import TOBA.Data.Account;
+import TOBA.infrastructure.User;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import TOBA.infrastructure.User;
+import TOBA.Data.UserDB;
 
 /**
  *
@@ -43,6 +46,10 @@ public class NewCustomerServlet extends HttpServlet {
         String state = request.getParameter("state");
         String zipCode = request.getParameter("zipCode");
         String email = request.getParameter("email");
+        /*String UserName = request.getParameter("UserName");
+        String Password = request.getParameter("Password");*/
+        //String Savings = request.getParameter("Savings");
+        //String Checking = request.getParameter("Checking");
         String message;
    
         if (firstName.isEmpty() && lastName.isEmpty() && phone.isEmpty() &&
@@ -52,6 +59,11 @@ public class NewCustomerServlet extends HttpServlet {
         } else {
             User user = new User(firstName, lastName, phone, address,
                                     city, state, zipCode, email);
+            Account checking = new Account(user, 25.00, Account.AccountType.CHECKING);
+            user.addAccount(checking);
+            UserDB.insert(user);
+            
+            
             
             
             HttpSession session = request.getSession();
@@ -92,5 +104,21 @@ public class NewCustomerServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+        
     }
+
+    /*private static class Savings {
+
+        double initialBalance = 0.00;
+        public Savings() {
+            initialBalance = 25.00;
+        }
+    }    
+    private static class Checking {
+
+        double initialBalance = 0.00;
+        public Checking() {
+            initialBalance = 0.00;
+        }
+    } */
 }

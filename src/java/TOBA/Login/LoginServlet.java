@@ -5,6 +5,7 @@
  */
 package TOBA.Login;
 
+import TOBA.infrastructure.User;
 import java.io.*;
 import java.io.PrintWriter;
 import javax.servlet.*;
@@ -31,14 +32,19 @@ public class LoginServlet extends HttpServlet {
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String url = "/login.html";
+        String url = "/login.jsp";
         
         // Get current action
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        
+        HttpSession session = request.getSession();
+      
         // perform action and set URL to appropriate page
         if (username.equals("jsmith@toba.com") && password.equals("letmein")) {
+              User user = new User("Jim", "Tillman", "8134120948", "Nowhere St",
+                                    "NoWheresVille", "NoWhereLand", "33333", "jsmith@toba.com");
+            session.setAttribute("user", user);
+            
             url = "/account_activity.jsp";  // the account activity page
         }
         else {
