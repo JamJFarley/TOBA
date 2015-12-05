@@ -7,17 +7,27 @@ package TOBA.Data;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 /**
  *
  * @author James.Farley
  */
+@Entity
 public class Transaction implements Serializable{
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int transactionoID;
     private double amt;
     private TransactionType type;
     
     public enum TransactionType {
         DEBIT, CREDIT, TRANSFER
     }
+    
+    public Transaction(){}
     
     public Transaction(double amt, TransactionType type) {
         this.amt = amt;

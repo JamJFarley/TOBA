@@ -23,6 +23,7 @@ import javax.persistence.Temporal;
  *
  * @author James.Farley
  */
+@Entity
 public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -44,6 +45,9 @@ public class Account {
     public enum AccountType {
         CHECKING, SAVINGS
     }
+    
+    public Account(){}
+    
     public Account (User user, double balance, AccountType type) {
         this.balance = balance;
         this.user = user;

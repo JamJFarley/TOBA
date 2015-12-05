@@ -16,6 +16,8 @@ import javax.persistence.TypedQuery;
 import TOBA.infrastructure.User;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
+import javax.persistence.NoResultException;
+import javax.persistence.TypedQuery;
 /**
  *
  * @author James.Farley
@@ -35,11 +37,26 @@ public class UserDB {
         } finally {
             em.close();
         }
-    }  
+    } 
+    
+    public static void update(User user) {
+        EntityManager em = DBUtil.getEmFactory().createEntityManager();
+        EntityTransaction trans = em.getTransaction();
+        trans.begin();
+        try {
+            em.merge(user);
+            trans.commit();
+        } catch (Exception e) {
+            System.out.println(e);
+            trans.rollback();
+        } finally {
+            em.close();
+        }
+    }
         
         
     
-    /*public static void delete(User user) {
+    public static void delete(User user) {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
         EntityTransaction trans = em.getTransaction();
         trans.begin();
@@ -73,7 +90,7 @@ public class UserDB {
     public static boolean userNameExists(String userName) {
         User u = selectUser(userName);
         return u != null;
-    }*/
+    }
         /*ConnectionPool pool = ConnectionPool.getInstance();
         Connection connection = pool.getConnection();
         PreparedStatement ps = null;

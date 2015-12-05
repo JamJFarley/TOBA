@@ -5,6 +5,7 @@
  */
 package TOBA.Login;
 
+import TOBA.Data.UserDB;
 import TOBA.infrastructure.User;
 import java.io.*;
 import java.io.PrintWriter;
@@ -38,9 +39,13 @@ public class LoginServlet extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         HttpSession session = request.getSession();
-      
+        User actualUser = null;
+        if (UserDB.userNameExists(username)){
+            actualUser = UserDB.selectUser(username);
+        }
         // perform action and set URL to appropriate page
-        if (username.equals("jsmith@toba.com") && password.equals("letmein")) {
+        if (username.equals(actualUser.getUserName()) && 
+                password.equals(actualUser.getPassword())) {
               User user = new User("Jim", "Tillman", "8134120948", "Nowhere St",
                                     "NoWheresVille", "NoWhereLand", "33333", "jsmith@toba.com");
             session.setAttribute("user", user);
